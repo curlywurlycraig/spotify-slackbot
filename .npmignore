@@ -3,3 +3,5 @@
 
 # CDK asset staging directory
 .cdk.staging
+
+.env
