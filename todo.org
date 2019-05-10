@@ -1,1 +1,3 @@
 * TODO Test and write spotify checker lambda
+* TODO Retry logic
+* TODO Research Node imports

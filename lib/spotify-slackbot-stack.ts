@@ -10,7 +10,10 @@ export class SpotifySlackbotStack extends cdk.Stack {
     const spotify_lambda = new lambda.Function(this, 'SpotifyCheckerLambda', {
       code: lambda.Code.directory('spotify-checker'),
       handler: 'index.main',
-      runtime: lambda.Runtime.NodeJS810
+      runtime: lambda.Runtime.NodeJS810,
+      environment: {
+        PLAYLIST_URI: process.env.PLAYLIST_URI
+      }
     });
 
     const spotify_lambda_target = new event_targets.LambdaFunction(spotify_lambda);
