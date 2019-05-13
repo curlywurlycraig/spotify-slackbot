@@ -1,14 +1,11 @@
-import AWS = require('aws-sdk');
 import axios from 'axios';
 
 const SPOTIFY_API_BASE_URL = 'https://api.spotify.com/v1';
 const SPOTIFY_ACCOUNTS_BASE_URL = 'https://accounts.spotify.com/api';
 
-const dynamodb = AWS.
-
 
 export const main = async (event: any = {}): Promise<any> => {
-    console.log(JSON.stringify(event, null, 4));
+    // console.log(JSON.stringify(event, null, 4));
 
     const playlist_id = process.env.SPOTIFY_PLAYLIST_ID;
     const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -42,10 +39,10 @@ export const main = async (event: any = {}): Promise<any> => {
             }
         );
 
-        console.log('Playlist tracks is ', response.data);
+        // console.log('Playlist tracks is ', response.data);
         response.data.items.forEach(entry => {
-            console.log('added by ', entry.added_by);
-            console.log('track is ', entry.track)
+            // console.log('added by ', entry.added_by);
+            // console.log('track is ', entry.track)
         });
     } catch (e) {
         console.log('error is ', e);

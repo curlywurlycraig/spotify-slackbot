@@ -6,14 +6,17 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest --setupFiles dotenv/config",
-    "watch": "tsc -w",
+    "test:unit": "jest --setupFiles dotenv/config --testPathIgnorePatterns .*\\.integration\\.test\\.ts --testRegex=.*\\.test\\.ts",
+    "test:integration": "jest --setupFiles dotenv/config --testRegex=.*\\.integration\\.test\\.ts",
+    "watch": "tsc -w --outDir build/",
     "cdk": "cdk"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.12",
     "@types/node": "8.10.45",
-    "typescript": "^3.3.3333",
-    "aws-cdk": "^0.31.0"
+    "aws-cdk": "^0.31.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.3.3333"
   },
   "dependencies": {
     "@aws-cdk/aws-dynamodb": "^0.31.0",
@@ -26,12 +29,5 @@
     "dotenv": "^8.0.0",
     "jest": "^24.8.0",
     "source-map-support": "^0.5.9"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "testMatch": [
-      "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).js?(x)"
-    ]
   }
 }

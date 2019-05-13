@@ -1,0 +1,68 @@
+Arguments: 
+  /usr/local/Cellar/node/10.12.0/bin/node /usr/local/bin/yarn run test:unit
+
+PATH: 
+  /usr/local/sbin:/Users/craig/.fastlane/bin:/usr/local/opt/python/libexec/bin:/Users/craig/Documents/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/craig/.rvm/bin:/Users/craig/.nvm/versions/node/v7.4.0/bin/:/Applications/love.app/Contents/MacOS/:/usr/local/lib/python2.7/site-packages/bin/:/usr/local/lib/python3.7/site-packages/bin/:/Users/craig/gems/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/craig/Documents/projects/spotify-slackbot/package.json: Unexpected token . in JSON at position 235
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "spotify-slackbot",
+    "version": "0.1.0",
+    "bin": {
+      "spotify-slackbot": "bin/spotify-slackbot.js"
+    },
+    "scripts": {
+      "build": "tsc",
+      "test:unit": "jest --setupFiles dotenv/config --testPathIgnorePatterns \".*\.integration\..*\"",
+      "test:integration": "jest --setupFiles dotenv/config --testRegex --testPathIgnorePatterns *.^(integration).*",
+      "watch": "tsc -w",
+      "cdk": "cdk"
+    },
+    "devDependencies": {
+      "@types/node": "8.10.45",
+      "typescript": "^3.3.3333",
+      "aws-cdk": "^0.31.0"
+    },
+    "dependencies": {
+      "@aws-cdk/aws-dynamodb": "^0.31.0",
+      "@aws-cdk/aws-events": "^0.31.0",
+      "@aws-cdk/aws-events-targets": "^0.31.0",
+      "@aws-cdk/aws-lambda": "^0.31.0",
+      "@aws-cdk/cdk": "^0.31.0",
+      "aws-sdk": "^2.453.0",
+      "axios": "^0.18.0",
+      "dotenv": "^8.0.0",
+      "jest": "^24.8.0",
+      "source-map-support": "^0.5.9"
+    },
+    "jest": {
+      "testEnvironment": "node",
+      "testMatch": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).js?(x)"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

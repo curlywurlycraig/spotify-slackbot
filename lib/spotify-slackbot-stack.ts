@@ -21,6 +21,7 @@ export class SpotifySlackbotStack extends cdk.Stack {
       environment: {
         PLAYLIST_URI: process.env.PLAYLIST_URI,
         TABLE_NAME: table.tableName,
+        REGION: process.env.REGION
       }
     });
 

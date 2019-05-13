@@ -1,4 +1,4 @@
-*.js
+build
 *.d.ts
 node_modules
 
