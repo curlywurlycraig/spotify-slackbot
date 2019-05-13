@@ -1,3 +1,6 @@
+* TODO If a track has been added since last run, post it to slack
+** TODO 
 * TODO Test and write spotify checker lambda
 * TODO Retry logic
 * TODO Research Node imports
+* TODO Pagination

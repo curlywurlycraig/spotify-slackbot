@@ -1,7 +1,10 @@
+import AWS = require('aws-sdk');
 import axios from 'axios';
 
 const SPOTIFY_API_BASE_URL = 'https://api.spotify.com/v1';
 const SPOTIFY_ACCOUNTS_BASE_URL = 'https://accounts.spotify.com/api';
+
+const dynamodb = AWS.
 
 
 export const main = async (event: any = {}): Promise<any> => {
@@ -12,7 +15,6 @@ export const main = async (event: any = {}): Promise<any> => {
     const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 
     console.log('Requesting track list from playlist: ', playlist_id);
-
 
     // Authenticate with spotify
     const base64_auth_header = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
@@ -41,6 +43,10 @@ export const main = async (event: any = {}): Promise<any> => {
         );
 
         console.log('Playlist tracks is ', response.data);
+        response.data.items.forEach(entry => {
+            console.log('added by ', entry.added_by);
+            console.log('track is ', entry.track)
+        });
     } catch (e) {
         console.log('error is ', e);
     }
