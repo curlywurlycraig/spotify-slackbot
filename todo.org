@@ -1,5 +1,12 @@
 * TODO If a track has been added since last run, post it to slack
-** TODO 
+** DONE Fetch playlist tracks
+** TODO Fix type errors
+** TODO Get async test to pass
+** TODO Create a test that a stored last run time is returned properly
+** TODO Get last run time
+** TODO If there's no last run time, set it and return early. Print why
+** TODO If there are any tracks with a later add time to the last run time, send a message to slack
+** TODO Store new run time
 * TODO Test and write spotify checker lambda
 * TODO Retry logic
 * TODO Research Node imports
